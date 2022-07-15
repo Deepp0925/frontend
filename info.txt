@@ -1,0 +1,11 @@
+parameters:
+    experiment name: 
+    training sample: 0.0 - 1.0, 0.95(default)
+    model: SVM,...
+    dataset: IndianPines,...
+    number of runs: 1, 30(default)
+    epoch: 100(default), 1 - inf
+    computation on: GPU, CPU
+
+ref: https://fennrii.github.io/JupyterBook/running/modelreferences.html
+    

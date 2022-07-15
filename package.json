@@ -1,0 +1,50 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "",
+  "source": "/src/index.html",
+  "scripts": {
+    "start": "npm run clean && parcel src/index.html --dist-dir build",
+    "predeploy": "npm run build",
+    "clean": "rm -rf build .parcel-cache",
+    "deploy": "rm -rf build/ && npm run build && gh-pages -d build",
+    "build": "npm run clean && parcel build src/index.html --dist-dir build --no-content-hash --public-url ./"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@headlessui/react": "^1.6.4",
+    "@heroicons/react": "^1.0.6",
+    "d3": "^7.4.4",
+    "file-saver": "^2.0.5",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-modal": "^3.15.1",
+    "react-promise": "^3.0.2",
+    "react-router": "^6.3.0",
+    "react-router-dom": "^6.3.0"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.6.0",
+    "@types/d3": "^7.4.0",
+    "@types/file-saver": "^2.0.5",
+    "@types/react": "^18.0.10",
+    "@types/react-dom": "^18.0.5",
+    "@types/react-modal": "^3.13.1",
+    "autoprefixer": "^10.4.7",
+    "parcel": "^2.6.0",
+    "parcel-namer-rewrite": "^2.0.0-rc.2",
+    "postcss": "^8.4.14",
+    "process": "^0.11.10",
+    "tailwindcss": "^3.0.24",
+    "typescript": "^4.7.2"
+  },
+  "parcel-namer-rewrite": {
+    "chain": "@parcel/namer-default",
+    "rules": {
+      "(.*).css": "static/css/$1.{hash}.css",
+      "(.*).js": "static/js/$1.{hash}.js"
+    }
+  }
+}

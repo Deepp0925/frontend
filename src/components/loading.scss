@@ -1,0 +1,31 @@
+.loading {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.loading-text {
+  width: 100%;
+  margin: 0 auto;
+  span {
+    display: inline-block;
+    margin: 0 5px;
+    letter-spacing: 0.75rem;
+    // this is the number of characters in the loading text
+    // this must match in order for the animation to work properly
+    @for $i from 0 through 9 {
+      &:nth-child(#{$i + 1}) {
+        filter: blur(0px);
+        animation: blur-text 1.5s calc($i/5) + s infinite linear alternate;
+      }
+    }
+  }
+}
+
+@keyframes blur-text {
+  0% {
+    filter: blur(0px);
+  }
+  100% {
+    filter: blur(2px);
+  }
+}
