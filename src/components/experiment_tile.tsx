@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 type status = "completed" | "running" | "error";
 
-interface ExperimentTileProps {
+export interface ExperimentTileProps {
   id: string;
   name: string;
   date: string;

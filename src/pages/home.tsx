@@ -1,39 +1,14 @@
 import React from "react";
-import { ExperimentTile } from "../components/experiment_tile";
+import {
+  ExperimentTile,
+  ExperimentTileProps,
+} from "../components/experiment_tile";
 
 export function Home() {
-  const experiments = [
+  const experiments: ExperimentTileProps[] = [
     {
       id: "1",
       name: "Experiment 1",
-      date: "2020-01-01",
-      time: "12:00",
-      status: "completed",
-    },
-    {
-      id: "2",
-      name: "Experiment 2",
-      date: "2020-01-01",
-      time: "12:00",
-      status: "running",
-    },
-    {
-      id: "3",
-      name: "Experiment 3",
-      date: "2020-01-01",
-      time: "12:00",
-      status: "error",
-    },
-    {
-      id: "4",
-      name: "Experiment 4",
-      date: "2020-01-01",
-      time: "12:00",
-      status: "completed",
-    },
-    {
-      id: "5",
-      name: "Experiment 5",
       date: "2020-01-01",
       time: "12:00",
       status: "completed",

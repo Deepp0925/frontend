@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import { ConfusionMatrixTable } from "./components/matrix";
 import { NavBar } from "./components/navbar";
 import { Experiment_Error } from "./pages/experiment_error";
@@ -15,21 +15,18 @@ export function App() {
         </div>
 
         <div className="md:container w-24/25 mx-auto mb-10">
-          <BrowserRouter>
+          <HashRouter>
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route
+              {/* <Route
                 path="/experiment/running"
                 element={<Experiment_Running />}
-              />
-              <Route path="/experiment/error" element={<Experiment_Error />} />
-              <Route
-                path="/experiment/realtime"
-                element={<Realtime_experiment />}
-              />
+              /> */}
+              {/* <Route path="/experiment/error" element={<Experiment_Error />} /> */}
+              <Route path="/experiment/:id" element={<Realtime_experiment />} />
               <Route path="*" element={<div>Not Found</div>} />
             </Routes>
-          </BrowserRouter>
+          </HashRouter>
         </div>
       </div>
     </>
